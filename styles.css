@@ -583,3 +583,25 @@ header {
     display: flex;
   }
 }
+
+/* Navigation Links */
+.nav-links a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #333;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Add background transition */
+  padding: 8px 12px; /* Add padding for better click area */
+  border-radius: 5px; /* Add rounded corners */
+}
+
+/* Hover Effect */
+.nav-links a:hover {
+  color: #007bff;
+  background-color: rgba(0, 123, 255, 0.1); /* Light blue background on hover */
+}
+
+/* Active Tab */
+.nav-links a.active {
+  color: #007bff;
+  background-color: rgba(0, 123, 255, 0.1); /* Light blue background for active tab */
+}
