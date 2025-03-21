@@ -59,3 +59,12 @@ function triggerConfetti() {
 
 // Example: Trigger confetti on button click
 document.querySelector(".btn").addEventListener("click", triggerConfetti);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+});
