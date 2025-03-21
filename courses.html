@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Courses - CourseHub</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* General Styles */
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+
+      body.dark-mode {
+        background-color: #121212;
+        color: #ffffff;
+      }
+
+      /* Updated Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #007bff, #00d4ff);
+        color: white;
+        text-align: center;
+        padding: 60px 20px; /* Reduced padding */
+        position: relative;
+        overflow: hidden;
+        height: 40vh; /* Reduced height */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 2rem; /* Reduced font size */
+        margin-bottom: 10px;
+        animation: fadeIn 2s ease-in-out;
+      }
+
+      .hero p {
+        font-size: 1rem; /* Reduced font size */
+        max-width: 600px;
+        margin: auto;
+        animation: fadeIn 3s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Course Cards */
+      .course-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 20px;
+      }
+
+      .course-box {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .course-box::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(45deg, #007bff, #00d4ff);
+        z-index: -1;
+        border-radius: 14px;
+        transition: opacity 0.3s ease-in-out;
+        opacity: 0;
+      }
+
+      .course-box:hover::before {
+        opacity: 1;
+      }
+
+      .course-box:hover {
+        transform: translateY(-10px);
+      }
+
+      .course-box h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+      }
+
+      .course-box p {
+        font-size: 1rem;
+        color: #666;
+      }
+
+      .course-box .btn {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background 0.3s;
+      }
+
+      .course-box .btn:hover {
+        background-color: #0056b3;
+      }
+
+      /* Dark Mode Styles */
+      body.dark-mode .course-box {
+        background-color: #1f1f1f;
+        color: #ffffff;
+      }
+
+      body.dark-mode .course-box p {
+        color: #ccc;
+      }
+
+      /* Footer */
+      footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 20px 10px;
+        margin-top: 50px;
+      }
+
+      .social-links {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .social-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .course-container {
+          grid-template-columns: 1fr;
+        }
+
+        .hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .hero p {
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Loading Animation -->
+    <div class="loader-wrapper">
+      <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="images/logo.jpeg" alt="CourseHub Logo" />
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="internship.html">Internships</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </div>
+        <div class="menu-toggle">&#9776;</div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Explore Our Courses 📚</h1>
+        <p>
+          Upgrade your skills with our top-rated IT and computer science
+          courses.
+        </p>
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses">
+      <div class="course-container">
+        <div class="course-box">
+          <h3>🚀 Flutter Development</h3>
+          <p>
+            Learn to build cross-platform mobile apps with Flutter and Dart.
+          </p>
+          <a href="#" class="btn">Enroll Now</a>
+        </div>
+        <div class="course-box">
+          <h3>💻 Web Development</h3>
+          <p>Master HTML, CSS, and JavaScript to create stunning websites.</p>
+          <a href="#" class="btn">Enroll Now</a>
+        </div>
+        <div class="course-box">
+          <h3>📊 Data Science</h3>
+          <p>Dive into Python, machine learning, and AI for data analysis.</p>
+          <a href="#" class="btn">Enroll Now</a>
+        </div>
+        <div class="course-box">
+          <h3>⚡ React & JavaScript</h3>
+          <p>Build dynamic web applications with React and JavaScript.</p>
+          <a href="#" class="btn">Enroll Now</a>
+        </div>
+        <div class="course-box">
+          <h3>🔐 Cybersecurity</h3>
+          <p>Learn ethical hacking, network security, and digital forensics.</p>
+          <a href="#" class="btn">Enroll Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2025 CourseHub. All Rights Reserved.</p>
+        <ul class="social-links">
+          <li>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- Scroll-to-Top Button -->
+    <button class="scroll-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar"></div>
+  </body>
+</html>
