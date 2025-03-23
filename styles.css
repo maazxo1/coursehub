@@ -476,3 +476,35 @@ body.dark-mode {
   body {
     overflow-x: hidden; /* Hide horizontal overflow */
   }
+
+.container {
+    width: 90%;  /* Instead of 1200px */
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  
+  @media (max-width: 768px) {
+    nav {
+      flex-direction: column;
+      text-align: center;
+    }
+    
+    .menu-toggle {
+      display: block; /* Show menu toggle button */
+    }
+  
+    .nav-links {
+      display: none; /* Hide links initially */
+    }
+  
+    .nav-links.active {
+      display: block; /* Show when menu toggled */
+    }
+  }
+
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  
