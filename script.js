@@ -6,6 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (menuToggle && navLinks) {
     menuToggle.addEventListener("click", () => {
       navLinks.classList.toggle("active");
+      // Close menu when a link is clicked (for better mobile UX)
+      navLinks.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+        });
+      });
     });
   }
 
@@ -20,7 +26,17 @@ document.addEventListener("DOMContentLoaded", () => {
       themeToggle.innerHTML = isDarkMode
         ? '<i class="fas fa-sun"></i>' // Sun icon for light mode
         : '<i class="fas fa-moon"></i>'; // Moon icon for dark mode
+
+      // Save theme preference to localStorage
+      localStorage.setItem("theme", isDarkMode ? "dark" : "light");
     });
+
+    // Load saved theme preference
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      body.classList.add("dark-mode");
+      themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
   }
 
   // Scroll-to-Top Button
