@@ -693,7 +693,7 @@ footer {
     }
 
     .nav-links.active {
-        display: flex;
+        max-height: 500px;
     }
 
     .features {
@@ -839,7 +839,363 @@ body.dark-mode .btn:hover {
       display: block; /* Show when menu toggled */
     }
   }
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f9fa;
+    color: #333;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
 
+/* Navigation Bar */
+header {
+    background: #002147;
+    color: white;
+    padding: 15px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f39c12;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/hero-bg.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 150px 20px;
+    margin-top: 60px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better readability */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero .btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: #f39c12;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.hero .btn:hover {
+    background: #e67e22;
+}
+
+/* Feature Sections */
+.features {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.feature-box {
+    flex: 1;
+    background: white;
+    margin: 20px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.feature-box:hover {
+    transform: scale(1.05);
+}
+
+.feature-box img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #002147;
+    color: white;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #003366;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero {
+        padding: 100px 20px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .feature-box {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8em;
+    }
+
+    .hero p {
+        font-size: 0.9em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode header {
+    background-color: #1f1f1f;
+}
+
+body.dark-mode .feature-box {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+body.dark-mode .btn {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+body.dark-mode .btn:hover {
+    background-color: #0056b3;
+}
+
+.theme-toggle {
+    cursor: pointer;
+    margin-left: 20px;
+    font-size: 1.5rem;
+}
+
+/* Loading Animation */
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+}
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #007bff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loader-wrapper.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Scroll-to-Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: #0056b3;
+}
+
+.scroll-to-top.visible {
+    display: block;
+}
+
+/* Progress Bar */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 4px;
+    background: #007bff;
+    width: 0%;
+    z-index: 1001;
+}
+
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Button Styles */
+.btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
   img, video {
     max-width: 100%;
     height: auto;
