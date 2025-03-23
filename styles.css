@@ -9,6 +9,7 @@ body {
 }
 
 /* Navigation Bar */
+/* Navigation Bar */
 header {
     background: #002147;
     color: white;
@@ -33,9 +34,17 @@ nav {
     font-weight: bold;
 }
 
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links li {
@@ -55,8 +64,38 @@ nav {
 
 .menu-toggle {
     display: none;
-    font-size: 2em;
+    font-size: 1.5rem;
     cursor: pointer;
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #003366;
+        position: fixed; /* Changed to fixed */
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 60px); /* Full height minus header */
+        padding: 20px 0;
+        z-index: 999; /* Ensure it appears above other content */
+        overflow-y: auto; /* Add scroll if content overflows */
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        text-align: center;
+        margin: 15px 0; /* Increased margin for better spacing */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 }
 
 /* Hero Section */
